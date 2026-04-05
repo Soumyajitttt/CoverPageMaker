@@ -1,0 +1,12 @@
+{
+  "name": "project-cover-page-generator",
+  "version": "1.0.0",
+  "description": "MERN app to generate academic project cover pages",
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm start",
+    "start:server": "cd server && npm start",
+    "start:client": "cd client && npm start"
+  }
+}
