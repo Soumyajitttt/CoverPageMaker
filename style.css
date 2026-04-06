@@ -1,0 +1,568 @@
+/* ── Base resets ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+}
+
+/* ── Form fields ── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #78716c;
+  text-transform: uppercase;
+}
+
+.field-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid #e7e5e4;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1c1917;
+  background: #fafaf9;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+
+.field-input:focus {
+  border-color: #292524;
+  box-shadow: 0 0 0 3px rgba(41,37,36,0.06);
+  background: #fff;
+}
+
+.field-input::placeholder {
+  color: #c4bfbc;
+}
+
+/* ── Style picker buttons ── */
+.style-btn {
+  padding: 8px 6px 6px;
+  border-radius: 8px;
+  border: 1.5px solid #e7e5e4;
+  background: #fafaf9;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  color: #78716c;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.style-btn:hover {
+  border-color: #a8a29e;
+  color: #1c1917;
+}
+
+.active-style {
+  border-color: #292524 !important;
+  color: #1c1917 !important;
+  background: #fff !important;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 99px; }
+
+/* ══════════════════════════════════════
+   COVER PAGE STYLES — 3 Themes
+   ══════════════════════════════════════ */
+
+/* ── 1. Classic (dark header + footer) ── */
+#coverPage.theme-classic {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#coverPage.theme-classic .cp-header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 5% 8% 4%;
+  text-align: center;
+  position: relative;
+}
+
+#coverPage.theme-classic .cp-header::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #c9a84c;
+  margin: 12px auto 0;
+}
+
+#coverPage.theme-classic .cp-college-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14px, 2.5vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  color: #fff;
+}
+
+#coverPage.theme-classic .cp-naac {
+  font-size: clamp(8px, 1.2vw, 11px);
+  color: #c9a84c;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+#coverPage.theme-classic .cp-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4% 8%;
+}
+
+#coverPage.theme-classic .cp-img-ring {
+  width: clamp(70px, 18%, 120px);
+  height: clamp(70px, 18%, 120px);
+  border-radius: 50%;
+  border: 3px solid #1a1a1a;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f0;
+  flex-shrink: 0;
+  margin-bottom: 14px;
+}
+
+#coverPage.theme-classic .cp-img-ring img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+#coverPage.theme-classic .cp-subject {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 3.5vw, 30px);
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+#coverPage.theme-classic .cp-subject-line {
+  width: 80px;
+  height: 2px;
+  background: #c9a84c;
+  margin: 8px auto;
+}
+
+#coverPage.theme-classic .cp-subtitle {
+  font-size: clamp(9px, 1.4vw, 12px);
+  color: #666;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#coverPage.theme-classic .cp-details-box {
+  width: 100%;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  padding: 5% 6%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin-top: 10px;
+}
+
+#coverPage.theme-classic .cp-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#coverPage.theme-classic .cp-detail-label {
+  font-size: clamp(7px, 1vw, 9px);
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#coverPage.theme-classic .cp-detail-value {
+  font-size: clamp(9px, 1.5vw, 13px);
+  color: #1a1a1a;
+  font-weight: 600;
+  font-family: 'Crimson Pro', serif;
+}
+
+#coverPage.theme-classic .cp-sign-area {
+  align-self: flex-end;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  min-width: 100px;
+}
+
+#coverPage.theme-classic .cp-sign-label {
+  font-size: clamp(7px, 1vw, 9px);
+  color: #888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+#coverPage.theme-classic .cp-sign-line {
+  width: 80px;
+  height: 1px;
+  background: #999;
+  margin: 0 auto 2px;
+}
+
+#coverPage.theme-classic .cp-footer {
+  background: #1a1a1a;
+  color: #c9a84c;
+  text-align: center;
+  padding: 2.5% 8%;
+  font-size: clamp(8px, 1.2vw, 10px);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── 2. Minimal ── */
+#coverPage.theme-minimal {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 8% 10%;
+}
+
+#coverPage.theme-minimal .cp-top-accent {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6%;
+}
+
+#coverPage.theme-minimal .cp-accent-line {
+  flex: 1;
+  height: 1.5px;
+  background: #1a1a1a;
+}
+
+#coverPage.theme-minimal .cp-accent-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  flex-shrink: 0;
+}
+
+#coverPage.theme-minimal .cp-college-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(13px, 2.2vw, 19px);
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-bottom: 2%;
+}
+
+#coverPage.theme-minimal .cp-img-ring {
+  width: clamp(60px, 16%, 110px);
+  height: clamp(60px, 16%, 110px);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f0efed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4% auto;
+  border: 1.5px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+#coverPage.theme-minimal .cp-img-ring img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+#coverPage.theme-minimal .cp-subject {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 4vw, 36px);
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 4% 0 2%;
+}
+
+#coverPage.theme-minimal .cp-subtitle {
+  font-size: clamp(9px, 1.3vw, 11px);
+  color: #888;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 6%;
+}
+
+#coverPage.theme-minimal .cp-details-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  align-content: start;
+}
+
+#coverPage.theme-minimal .cp-detail-item {
+  border-left: 2px solid #e0e0e0;
+  padding-left: 10px;
+}
+
+#coverPage.theme-minimal .cp-detail-label {
+  font-size: clamp(7px, 0.9vw, 8px);
+  font-weight: 700;
+  color: #aaa;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+#coverPage.theme-minimal .cp-detail-value {
+  font-size: clamp(9px, 1.4vw, 12px);
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-top: 1px;
+  font-family: 'Crimson Pro', serif;
+}
+
+#coverPage.theme-minimal .cp-bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 6%;
+  padding-top: 4%;
+  border-top: 1.5px solid #1a1a1a;
+}
+
+#coverPage.theme-minimal .cp-bottom-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(11px, 1.8vw, 15px);
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+#coverPage.theme-minimal .cp-sign-area {
+  text-align: right;
+}
+
+#coverPage.theme-minimal .cp-sign-space {
+  width: 90px;
+  height: 30px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 4px;
+  margin-left: auto;
+}
+
+#coverPage.theme-minimal .cp-sign-label {
+  font-size: clamp(7px, 0.9vw, 8px);
+  color: #aaa;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* ── 3. Elegant (dark) ── */
+#coverPage.theme-elegant {
+  background: linear-gradient(160deg, #0f0f1a 0%, #1a1a2e 55%, #16213e 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+#coverPage.theme-elegant::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 80% 20%, rgba(201,168,76,0.07) 0%, transparent 60%),
+                    radial-gradient(circle at 20% 80%, rgba(201,168,76,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+#coverPage.theme-elegant .cp-corner-tl,
+#coverPage.theme-elegant .cp-corner-br {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+}
+
+#coverPage.theme-elegant .cp-corner-tl {
+  top: 4%; left: 4%;
+  border-top: 1.5px solid #c9a84c;
+  border-left: 1.5px solid #c9a84c;
+}
+
+#coverPage.theme-elegant .cp-corner-br {
+  bottom: 4%; right: 4%;
+  border-bottom: 1.5px solid #c9a84c;
+  border-right: 1.5px solid #c9a84c;
+}
+
+#coverPage.theme-elegant .cp-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8% 10%;
+  position: relative;
+  z-index: 1;
+}
+
+#coverPage.theme-elegant .cp-college-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(13px, 2.3vw, 20px);
+  font-weight: 600;
+  color: #e8e0d0;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+#coverPage.theme-elegant .cp-gold-bar {
+  width: 50px;
+  height: 1.5px;
+  background: #c9a84c;
+  margin: 8px auto;
+}
+
+#coverPage.theme-elegant .cp-naac {
+  font-size: clamp(7px, 1vw, 9px);
+  color: #c9a84c;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4%;
+}
+
+#coverPage.theme-elegant .cp-img-ring {
+  width: clamp(70px, 18%, 120px);
+  height: clamp(70px, 18%, 120px);
+  border-radius: 50%;
+  border: 2px solid #c9a84c;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  flex-shrink: 0;
+  margin-bottom: 4%;
+  box-shadow: 0 0 20px rgba(201,168,76,0.15);
+}
+
+#coverPage.theme-elegant .cp-img-ring img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+#coverPage.theme-elegant .cp-subject {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 3.5vw, 30px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#coverPage.theme-elegant .cp-subtitle {
+  font-size: clamp(8px, 1.1vw, 10px);
+  color: #c9a84c;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 6px 0 4%;
+}
+
+#coverPage.theme-elegant .cp-details-box {
+  width: 100%;
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 6px;
+  padding: 4% 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  background: rgba(255,255,255,0.03);
+  flex-shrink: 0;
+}
+
+#coverPage.theme-elegant .cp-detail-item { display: flex; flex-direction: column; gap: 2px; }
+
+#coverPage.theme-elegant .cp-detail-label {
+  font-size: clamp(7px, 0.9vw, 8px);
+  font-weight: 700;
+  color: #c9a84c;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+#coverPage.theme-elegant .cp-detail-value {
+  font-size: clamp(9px, 1.4vw, 12px);
+  color: #e8e0d0;
+  font-weight: 500;
+  font-family: 'Crimson Pro', serif;
+}
+
+#coverPage.theme-elegant .cp-bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 4%;
+  padding-top: 4%;
+  border-top: 1px solid rgba(201,168,76,0.2);
+  flex-shrink: 0;
+}
+
+#coverPage.theme-elegant .cp-bottom-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(11px, 1.7vw, 14px);
+  font-weight: 600;
+  color: #e8e0d0;
+}
+
+#coverPage.theme-elegant .cp-sign-area { text-align: right; }
+
+#coverPage.theme-elegant .cp-sign-space {
+  width: 90px;
+  height: 30px;
+  border-bottom: 1px solid rgba(201,168,76,0.4);
+  margin-bottom: 4px;
+  margin-left: auto;
+}
+
+#coverPage.theme-elegant .cp-sign-label {
+  font-size: clamp(7px, 0.9vw, 8px);
+  color: rgba(201,168,76,0.6);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* ── Loading overlay ── */
+#downloadBtn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* ── Responsive: mobile form/preview stacked ── */
+@media (max-width: 1023px) {
+  #form-panel { border-right: none; border-bottom: 1px solid #e7e5e4; max-height: 55vh; }
+}
