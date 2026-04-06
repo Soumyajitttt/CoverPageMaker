@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./CoverPreview.css";
 
-// A collection of college/university photo search URLs using Unsplash
+// A collection of college/university photo search URLs using Unsplas
 const COLLEGE_PHOTOS = [
   "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=600&q=80",
   "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80",
