@@ -1,4 +1,4 @@
-# 📄 Project Cover Page Generator
+# 📄 Cover Page Generator
 
 A clean, modern, frontend-only web app to generate professional project file cover pages — no server required.
 
